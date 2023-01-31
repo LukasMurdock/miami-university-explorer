@@ -1,0 +1,45 @@
+{
+	"private": true,
+	"sideEffects": false,
+	"scripts": {
+		"build": "npm run build:css && remix build",
+		"build:css": "tailwindcss -m -i ./styles/app.css -o app/styles/app.css",
+		"deploy": "fly deploy --remote-only",
+		"dev": "concurrently \"npm run dev:css\" \"remix dev\"",
+		"dev:css": "tailwindcss -w -i ./styles/app.css -o app/styles/app.css",
+		"start": "remix-serve build",
+		"typecheck": "tsc",
+		"seed": "ts-node -r tsconfig-paths/register ./db/seed.ts"
+	},
+	"dependencies": {
+		"@headlessui/react": "^1.7.8",
+		"@remix-run/node": "^1.11.1",
+		"@remix-run/react": "^1.11.1",
+		"@remix-run/serve": "^1.11.1",
+		"better-sqlite3": "^8.0.1",
+		"isbot": "^3.6.5",
+		"lru-cache": "^7.14.1",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"zod": "^3.20.2"
+	},
+	"devDependencies": {
+		"@remix-run/dev": "^1.11.1",
+		"@remix-run/eslint-config": "^1.11.1",
+		"@tailwindcss/forms": "^0.5.3",
+		"@tailwindcss/typography": "^0.5.9",
+		"@types/better-sqlite3": "^7.6.3",
+		"@types/node": "^18.11.18",
+		"@types/react": "^18.0.27",
+		"@types/react-dom": "^18.0.10",
+		"concurrently": "^7.6.0",
+		"eslint": "^8.33.0",
+		"tailwindcss": "^3.2.4",
+		"ts-node": "^10.9.1",
+		"tsconfig-paths": "^4.1.2",
+		"typescript": "^4.9.4"
+	},
+	"engines": {
+		"node": ">=14"
+	}
+}
