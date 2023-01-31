@@ -39,6 +39,7 @@ export function DbModel<
 	type modelProps = z.infer<typeof props.zodSchema>;
 
 	function initModel(db: Database) {
+		createTable(db, props);
 		return {
 			tableName: props.tableName,
 			deleteAll: () => {

@@ -4,14 +4,14 @@ import { initModels } from '../app/models/index';
 const db = new Database('./data/sqlite.db');
 const model = initModels(db);
 
-async function seed() {
+async function generate() {
 	// cleanup the existing database
-	model.courseInstance.deleteAll();
+	// model.courseInstance.createTable();
 
 	console.log(`Database has been seeded. 🌱`);
 }
 
-seed().catch((e) => {
+generate().catch((e) => {
 	console.error(e);
 	process.exit(1);
 });

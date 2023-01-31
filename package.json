@@ -9,7 +9,8 @@
 		"dev:css": "tailwindcss -w -i ./styles/app.css -o app/styles/app.css",
 		"start": "remix-serve build",
 		"typecheck": "tsc",
-		"seed": "ts-node -r tsconfig-paths/register ./db/seed.ts"
+		"seed": "ts-node -r tsconfig-paths/register ./db/seed.ts",
+		"db-generate": "ts-node -r tsconfig-paths/register ./db/generate.ts"
 	},
 	"dependencies": {
 		"@headlessui/react": "^1.7.8",
