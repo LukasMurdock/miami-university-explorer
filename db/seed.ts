@@ -1,7 +1,7 @@
 import Database from 'better-sqlite3';
 import { initModels } from '../app/models/index';
 
-const db = new Database('./db.sqlite');
+const db = new Database('./data/sqlite.db');
 const model = initModels(db);
 
 async function seed() {

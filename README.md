@@ -29,6 +29,10 @@ Models:
 -   Semesters?
 -   Instructors?
 
+No Prisma:
+
+-   Learn what it’s like without it
+
 Potential performance:
 
 -   Proxy through NGINX server

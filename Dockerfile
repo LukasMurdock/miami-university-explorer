@@ -26,6 +26,7 @@ RUN npm prune --production
 # Build the app
 FROM base as build
 
+ENV DATABASE_URL=file:/data/sqlite.db
 ENV NODE_ENV=production
 
 RUN mkdir /app

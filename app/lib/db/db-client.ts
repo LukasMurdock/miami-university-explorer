@@ -18,7 +18,7 @@ interface CustomNodeJsGlobal extends NodeJS.Global {
 // Prevent multiple instances of db in development
 declare const global: CustomNodeJsGlobal;
 
-let db = global.db || new Database('./db.sqlite');
+let db = global.db || new Database('/data/sqlite.db');
 
 // add Models to db
 db.model = initModels(db);
